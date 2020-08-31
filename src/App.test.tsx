@@ -1,9 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from './custom-render';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('App renders correctly', () => {
+    const { getByText } = render(<App />);
+    const headerTitle = getByText(/React's list of open issues/i);
+    expect(headerTitle).toBeInTheDocument();
 });
